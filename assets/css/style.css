@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+/* body con il background gradient */
 body{
   width: 100%;
   display: flex;
@@ -20,39 +21,173 @@ body{
   font-family: 'Lato', sans-serif;
 }
 
+/* megacontenitore che contiene tutto centrato nel body */
 .container{
   width: 80%;
   min-width: 900px;
   height: 95%;
+  min-height: 300px;
   background-color: white;
 }
 
+/* i due sottocontenitori */
 .container .left,
 .container .right{
   float: left;
   height: 100%;
 }
-
+/* sottocontenitore di sinistra */
 .container .left{
   width: 35%;
-  background-color: wheat;
+  background-color: #fafafa;
 }
-
+/* sottocontenitore di destra */
 .container .right{
   width: 65%;
   background-color: thistle;
 }
 
-.container .right header,
-.container .right footer{
+/* parte header di destra */
+.container .right header{
+  padding: 10px;
+  display: flex;
   height: 70px;
-  background-color: red; /* #eaeaea */
+  background-color: #eaeaea; /* #eaeaea */
+}
+/* contiene l'immagine dell'utente, il nome e i vari favicon */
+.container .right header .utente{
+  display: flex;
+}
+
+.container .right header .utente img{
+  border-radius: 70px;
+}
+
+.container .right header .utente div{
+  margin-left: 10px;
+}
+
+.container .right header .icons{
+  width: 50%;
+  display: flex;
+  line-height: 70px;
+  vertical-align: middle;
+  color: #b1b1b1;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 18px;
+}
+
+.container .right header .icons i{
+  margin: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.container .right main .rowSend,.container .right main .rowReceive{
+  display: flex;
+  width: 100%;
+}
+
+.container .right main .rowSend{
+  justify-content: flex-end;
+}
+
+.container .right main .send,.container .right main .receive{
+  margin: 20px 0;
+  min-width: 100px;
+  max-width: 600px;
+  min-height: 60px;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.container .right main .send{
+  margin-right: 50px;
+  background-color: #d5f9bb;
+}
+
+.container .right main .receive{
+  margin-left:50px;
+  background-color: #ffffff;
+}
+/* .container .right main .send,.container .right main .receive{
+ 
+  min-width: 100px;
+  max-width: max-content;
+  height: 50px;
+}
+
+.container .right main .send{
+  background-color: lightgreen;
+}
+
+.container .right main .receive{
+  background-color: white;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container .right footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  background-color: #f3eeea; 
+}
+
+.container .right footer .emoticons,.container .right footer .msgInput,.container .right footer .mic{
+  height: 100%;
+}
+
+.container .right footer .emoticons,.container .right footer .mic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+}
+
+.container .right footer .emoticons i,.container .right footer .mic i{
+  cursor: pointer;
+  font-size: 25px;
+  color: #6b7376;
+}
+
+.container .right footer .msgInput{
+  display: flex;
+  align-items: center;
+  width: calc(100% - 20%);
+}
+
+.container .right footer .msgInput input{
+  cursor: pointer;
+  padding-left: 20px;
+  width: 99%;
+  height: 45px;
+  border: none;
+  border-radius: 10px;
 }
 
 .container .right main{
   height: calc(100% - 140px);
+  background-image: url(/assets/img/mine.jpg);
 }
 
+
+
+
+/* parte di sinistra */
 .container .left header{
   height: 70px;
   width: 100%;
@@ -91,6 +226,7 @@ body{
 }
 
 .container .left>header .icons i{
+  cursor: pointer;
   margin:0 10px;
   font-size: 22px;
 }
@@ -117,6 +253,7 @@ body{
 } 
 
 .container .left>main .notifiche .bell .fas.fa-bell-slash{
+  cursor: pointer;
   color: #8edbfc;
   font-size: 25px;
 }
@@ -135,7 +272,7 @@ body{
 }
 
 .chats .search>input{
-  
+  cursor: pointer;
   height: 45px;
 }
 
@@ -167,5 +304,69 @@ body{
 .search i{
   color: #b6b9bb;
 }
+.contatti{
+  width: 98%;
+  height: calc(100% - 145px);
+  overflow: auto;
+}
+
+.contatti ul {
+  height: 100%;
+  list-style: none;
+  background-color: white;
+  border-left: 1px solid #f4f5f5;
+}
+
+.contatti ul li {
+  height: 80px;
+  display: flex;
+  border-bottom:1px solid #f4f5f5;
+}
+
+.contatti ul li img{
+  margin: 10px;
+  height: 60px;
+  border-radius: 60px;
+}
+
+.contatti ul li span{
+  margin-left: 10px;
+  margin-top: 15px;
+  font-size: larger;
+}
 
 
+
+
+
+
+/* stile scrollbar */
+.contatti::-webkit-scrollbar-track {
+  border: 1px solid #eaeaea;
+  padding: 2px 0;
+  background-color: #eaeaea;
+}
+.contatti::-webkit-scrollbar {
+  width: 10px;
+}
+.contatti::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #f4f5f5;
+  border: 1px solid #000;
+}
+/* /stile scrollbar */
+
+
+
+/* hover */
+
+.contatti ul li:hover{
+  background-color: #f4f5f5;
+}
+
+/* classi active */
+
+.contatti ul li.last{
+  border: none;
+}

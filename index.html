@@ -14,14 +14,17 @@
 <body>
   <div id="app" class="container">
 
+    <!-- contenitore di sinistra con la ricerca delle chat -->
     <aside class="left">
 
       <header>
+        <!-- avatar e nome utente -->
         <div class="utente">
           <img src="assets/img/avatar_io.jpg" alt="">
           <span>Nome Utente</span>
         </div>
 
+        <!-- icone stories, chat e impostazioni -->
         <div class="icons">
           <i class="fas fa-circle-notch"></i>
           <i class="fas fa-comment-alt"></i>
@@ -29,19 +32,23 @@
         </div>
       </header>
 
+
       <main>
+        <!-- riquadro celeste con la campanellina sbarrata -->
         <div class="notifiche">
+
           <div class="bell">
-
             <i class="fas fa-bell-slash"></i>
-
           </div>
+
           <div class="notificheMessaggi">
             <p style="font-size: 20px;">Ricevi notifiche di nuovi messaggi</p>
             <p style="text-decoration: underline;color: #507485;font-size: 15px;">Attiva notifiche desktop</p>
           </div>
+
         </div>
 
+        <!-- riquadro con la barra di ricerca -->
         <div class="search">
 
           <i class="fas fa-search"></i>
@@ -49,18 +56,68 @@
 
         </div>
 
+        <div class="contatti">
+          
+          <ul>
+            <li v-for="(contact,index) in contacts">
+              <img :src="'./assets/img/avatar'+contact[index].avatar" alt="">
+              <span>{{contact.name}}</span>
+            </li>
+          </ul>
+
+
+        </div>
 
 
       </main>
 
     </aside>
+
+    <!-- contenitore con la chat messaggi verdi e bianchi -->
     <main class="right">
 
-      <header></header>
+      <header>
+        <div class="utente">
+          <img src="assets/img/avatar_1.jpg" alt="">
+          <div>
+            <h4 style="font-size: 20px;">Michele</h4>
+            <span style="color: #507485;">Ultimo accesso oggi alle</span>
+          </div>
+        </div>
+        <div class="icons">
+          <i class="fas fa-search"></i>
+          <i class="fas fa-paperclip"></i>
+          <i class="fas fa-ellipsis-v"></i>
+        </div>
+      </header>
 
-      <main></main>
+      <main>
+        <div class="rowSend">
+          <div class="send">
+            <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore vero praesentium sit sapiente maiores ducimus fuga consectetur quidem officiis exercitationem fugit, provident vitae corrupti cum cupiditate? Odit ea est vitae. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, dolore id. Ipsam omnis, consequuntur quibusdam vitae ratione magni obcaecati eos nobis aperiam quas alias et incidunt quod! Ipsa, velit illum.</span>
+          </div>
+        </div>
+        <div class="rowReceive">
+          <div class="receive">
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores commodi maxime excepturi quam eligendi magnam ducimus natus optio sunt tempora, saepe at dolorum necessitatibus. Delectus facere esse nisi perferendis quasi! Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae iusto unde ducimus dolores libero ullam odit excepturi. Non, tenetur rerum animi quia doloremque soluta suscipit quaerat eius deleniti modi blanditiis.</span>
+          </div>
+        </div>
+      </main>
 
-      <footer></footer>
+      <footer>
+        <div class="emoticons">
+          <i class="far fa-smile"></i>
+        </div>
+
+        <div class="msgInput">
+          <input type="text" name="" id="" placeholder="Scivi un messaggio">
+        </div>
+
+        <div class="mic">
+          <i class="fas fa-microphone"></i>
+        </div>
+
+      </footer>
 
     </main>
   </div>
