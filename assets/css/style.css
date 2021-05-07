@@ -1,0 +1,171 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom,
+    #249688 0%,
+    #249699 15%,
+    #dadbd4 15%,
+    #dadbd4 100%
+  );
+  background-repeat: no-repeat;
+  font-family: 'Lato', sans-serif;
+}
+
+.container{
+  width: 80%;
+  min-width: 900px;
+  height: 95%;
+  background-color: white;
+}
+
+.container .left,
+.container .right{
+  float: left;
+  height: 100%;
+}
+
+.container .left{
+  width: 35%;
+  background-color: wheat;
+}
+
+.container .right{
+  width: 65%;
+  background-color: thistle;
+}
+
+.container .right header,
+.container .right footer{
+  height: 70px;
+  background-color: red; /* #eaeaea */
+}
+
+.container .right main{
+  height: calc(100% - 140px);
+}
+
+.container .left header{
+  height: 70px;
+  width: 100%;
+  background-color: #eaeaea;
+  display: flex;
+}
+
+.container .left header .utente{
+  width: 59%;
+  /* display: inline-block;
+  height: 100%; */
+  display: flex;
+  align-items: center;
+}
+
+.container .left header .utente img{
+  height: 60px;
+  margin: 5px;
+  border-radius: 60px;
+}
+
+.container .left header .utente span{
+  line-height: 70px;
+  vertical-align: middle;
+}
+
+.container .left header .icons{
+  width: 50%;
+  display: flex;
+  line-height: 70px;
+  vertical-align: middle;
+  color: #b1b1b1;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 18px;
+}
+
+.container .left>header .icons i{
+  margin:0 10px;
+  font-size: 22px;
+}
+.container .left>main {
+  height: calc(100% - 70px);
+}
+.container .left>main .notifiche{
+  height: 90px;
+  background-color: #8edbfc;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.container .left>main .notifiche .bell{
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 100px;
+  padding:5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+.container .left>main .notifiche .bell .fas.fa-bell-slash{
+  color: #8edbfc;
+  font-size: 25px;
+}
+
+.container .left>main .notificheMessaggi{
+  margin-left: 10px;
+}
+
+.chats{
+  height: calc(100% - 90px);
+  background-color: black;
+}
+
+.chats .search {
+  margin: 10px;
+}
+
+.chats .search>input{
+  
+  height: 45px;
+}
+
+.chats .person{
+  height: calc(100% - 50px);
+  margin-top: 10px;
+  background-color: white;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  margin: 10px;
+  padding-left: 10px;
+}
+
+.search>input{
+  width: 100%;
+  height: 35px;
+  line-height: 28px;
+  font-size: 20px;
+  padding-left: 10px;
+  border: none;
+  outline: none;
+}
+
+.search i{
+  color: #b6b9bb;
+}
+
+
