@@ -3,6 +3,9 @@ const app = new Vue ({
   data: {
     mioName: "Lucia",
     activeIndex : 0,
+    now:dayjs().format('DD/MM/YYYY HH:mm:ss'),
+    messaggio:"",
+    searchName : null,
     contacts: [
       {
         name: 'Michele',
@@ -98,6 +101,35 @@ const app = new Vue ({
       console.log(this.contacts[index].visible)
       this.contacts[index].visible = !this.contacts[index].visible;
       console.log(this.contacts[index].visible);
+    },
+    addText(){
+      
+      this.contacts[this.activeIndex].messages.push(
+        {
+          date:dayjs().format('DD/MM/YYYY HH:mm:ss'),
+          text:this.messaggio,
+          status:'sent'
+        }
+        );
+      this.messaggio = '';
+      setTimeout(()=>{
+        this.contacts[this.activeIndex].messages.push(
+          {
+            date:dayjs().format('DD/MM/YYYY HH:mm:ss'),
+            text:'ok',
+            status:'received'
+          }
+          )
+        },4000)
+    },
+    searchNames(){
+      if(this.searchName){
+        return this.contacts.filter((item)=>{
+          return this.searchNames.toLowerCase().split(' ').every(v =>this.contacts.name.toLowerCase().includes(v))
+        })
+      }else{
+        return this.contacts;
+      }
     }
   }
 })

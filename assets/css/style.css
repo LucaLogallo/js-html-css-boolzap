@@ -130,18 +130,6 @@ body{
   background-color: white;
 } */
 
-
-
-
-
-
-
-
-
-
-
-
-
 .container .right footer{
   display: flex;
   justify-content: center;
@@ -308,52 +296,83 @@ body{
 .search i{
   color: #b6b9bb;
 }
-.contatti{
+.container .left main .contatti{
   width: 98%;
   height: calc(100% - 145px);
   overflow: auto;
 }
 
-.contatti ul {
+.container .left main .contatti ul {
   height: 100%;
   list-style: none;
   background-color: white;
   border-left: 1px solid #f4f5f5;
 }
 
-.contatti ul li {
+.container .left main .contatti ul li {
+  position: relative;
   height: 80px;
   display: flex;
   border-bottom:1px solid #f4f5f5;
 }
 
-.contatti ul li img{
+.container .left main .contatti ul li img{
   margin: 10px;
   height: 60px;
   border-radius: 60px;
 }
 
-.contatti ul li span{
+.container .left main .contatti ul li div {
+  display: flex;
+  flex-direction: column;
   margin-left: 10px;
   margin-top: 15px;
   font-size: larger;
 }
+.container .left main .contatti ul li div span{
+  overflow: auto;
+  max-height: 50%;
+}
 
+.container .left main .contatti ul li .contattiData{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transform: translateX;
+}
 
 
 
 
 
 /* stile scrollbar */
-.contatti::-webkit-scrollbar-track {
+.container .left main .contatti::-webkit-scrollbar-track {
   border: 1px solid #eaeaea;
   padding: 2px 0;
   background-color: #eaeaea;
 }
-.contatti::-webkit-scrollbar {
+.container .left main .contatti::-webkit-scrollbar {
   width: 10px;
 }
-.contatti::-webkit-scrollbar-thumb {
+.container .left main .contatti::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #f4f5f5;
+  border: 1px solid #000;
+}
+
+
+.container .right main::-webkit-scrollbar-track {
+  border: 1px solid #eaeaea;
+  padding: 2px 0;
+  background-color: #eaeaea;
+}
+
+.container .right main::-webkit-scrollbar {
+  width: 10px;
+}
+
+.container .right main::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0,0,0,.3);
   background-color: #f4f5f5;
