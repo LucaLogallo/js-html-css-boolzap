@@ -66,7 +66,7 @@
               <img :src="'assets/img/avatar' + contact.avatar +'.jpg'" alt="">
               <div>
                 <span style="font-size: 25px;">{{item.name}}</span>
-                <span style="font-size: 15px; color: #b1b1b1;">{{item.messages[contact.messages.length-1].text}}</span>
+                <span style="font-size: 15px; color: #b1b1b1;">{{item.messages[item.messages.length-1].text}}</span>
               </div>
               <span class="contattiData" style="font-size: 15px;">{{item.messages.slice(-1)[0].date}}</span>
             </li>
