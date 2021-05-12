@@ -56,19 +56,20 @@
           <input v-model = "searchName" type="form-control" name="" id="" placeholder="Cerca o inizia una nuova chat">
 
         </div>
-
+       <!--  activeIndex === index  ? 'active' : null -->
         <div class="contatti">
-          
           <ul>
-            <li v-for="(item,index) in searchNames"
+            <li v-for="(contact,index) in contacts"
             @click ="activeIndex = index"
+            :class="contact.name.toLowerCase().includes(searchName.toLowerCase()) ? 'show' : 'hide' "
             >
               <img :src="'assets/img/avatar' + contact.avatar +'.jpg'" alt="">
               <div>
-                <span style="font-size: 25px;">{{item.name}}</span>
-                <span style="font-size: 15px; color: #b1b1b1;">{{item.messages[item.messages.length-1].text}}</span>
+                <span style="font-size: 25px;">{{contact.name}}</span>
+                <span style="font-size: 15px; color: #b1b1b1;text-overflow: ellipsis;">{{contact.messages.slice(-1)[0].text}}</span>
               </div>
-              <span class="contattiData" style="font-size: 15px;">{{item.messages.slice(-1)[0].date}}</span>
+              <span class="contattiData" style="font-size: 15px;">{{contact.messages.slice(-1)[0].date}}</span>
+
             </li>
           </ul>
 
@@ -113,7 +114,14 @@
             class="send">
               <span class="message-text">{{message.text}}</span> 
               <span class="message-time">{{message.date}}</span>
-              <i class="fa fa-chevron-down f-right message-options"></i>
+              <i 
+              @click="eliminaMex(index)"
+              class="fa fa-chevron-down f-right message-options"></i>
+              <div 
+              :class="deleteMex === true && index === indexMex ? 'show' : null"
+              class="elimina">
+
+              </div>
             </div>
           </div>
           <div 
@@ -122,7 +130,14 @@
             <div class="receive">
               <span class="message-text">{{message.text}}</span> 
               <span class="message-time">{{message.date}}</span>
-              <i class="fa fa-chevron-down f-right message-options"></i>
+              <i 
+              @click="eliminaMex(index)"
+              class="fa fa-chevron-down f-right message-options"></i>
+              <div 
+              :class="deleteMex === true && index === indexMex ? 'show' : null"
+              class="elimina">
+                
+              </div>
             </div>
           </div>
         

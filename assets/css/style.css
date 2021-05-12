@@ -104,6 +104,33 @@ body{
   border-radius: 15px;
   padding: 15px;
   word-wrap: break-word;
+  position: relative;
+}
+.container .right main .send .elimina{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: red;
+  top:30px;
+  right: 10px;
+  z-index: 999;
+  display: none;
+}
+
+
+.container .right main .receive .elimina{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: red;
+  top:30px;
+  right: 10px;
+  z-index: 999;
+  display: none;
+}
+
+.container .right main .send .elimina.show,.container .right main .receive .elimina.show{
+  display: block;
 }
 
 .container .right main .send{
@@ -316,6 +343,17 @@ body{
   border-bottom:1px solid #f4f5f5;
 }
 
+.container .left main .contatti ul li.active{
+  background-color: #f4f5f5;
+}
+.container .left main .contatti ul li.hide{
+  display: none;
+}
+
+.container .left main .contatti ul li.show{
+  display: flex;
+}
+
 .container .left main .contatti ul li img{
   margin: 10px;
   height: 60px;
@@ -328,9 +366,10 @@ body{
   margin-left: 10px;
   margin-top: 15px;
   font-size: larger;
+  text-overflow: ellipsis;
 }
 .container .left main .contatti ul li div span{
-  overflow: auto;
+  text-overflow: ellipsis;
   max-height: 50%;
 }
 
@@ -384,7 +423,7 @@ body{
 
 /* hover */
 
-.contatti ul li:hover{
+.contatti ul li:active{
   background-color: #f4f5f5;
 }
 

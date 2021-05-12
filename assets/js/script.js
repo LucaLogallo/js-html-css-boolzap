@@ -5,7 +5,9 @@ const app = new Vue ({
     activeIndex : 0,
     now:dayjs().format('DD/MM/YYYY HH:mm:ss'),
     messaggio:"",
-    searchName : null,
+    searchName : '',
+    deleteMex: false,
+    indexMex: 0,
     contacts: [
       {
         name: 'Michele',
@@ -122,14 +124,29 @@ const app = new Vue ({
           )
         },4000)
     },
-    searchNames(){
+    eliminaMex(index){
+      this.deleteMex = !this.deleteMex;
+      this.indexMex = index;
+    }
+    /* searchNames(){
+      console.log(this.searchNames); 
+      console.log(this.contacts);
+      console.log(this.searchName.toLowerCase().split(' ').every(v =>this.contacts.name.toLowerCase().includes(v)));
+       
+      
+      
       if(this.searchName){
+        console.log(this.searchNames); 
+        
         return this.contacts.filter((item)=>{
-          return this.searchNames.toLowerCase().split(' ').every(v =>this.contacts.name.toLowerCase().includes(v))
+          return this.searchName.toLowerCase().split(' ').every(v =>this.contacts.name.toLowerCase().includes(v))
         })
       }else{
+
         return this.contacts;
       }
-    }
+      
+    
+    } */
   }
 })
